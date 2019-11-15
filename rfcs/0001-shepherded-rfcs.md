@@ -83,61 +83,161 @@ to the process:
 # Reference-level explanation
 [reference-level-explanation]: #reference-level-explanation
 
+## Proposal template
 
+The proposal template will be fairly minimal. It will include the following information:
+
+* key people involved in the proposal
+* a short summary of the problem
+* link(s) to internals discussion thread(s) where the proposal is being discussed in more depth
+* text indicating the role of this issue (in particular, that it is
+  not meant as a place for discussion)
+  
+## Proposal issues
+
+The proposal issues are meant to serve more as a "table of contents"
+that lets people catch up on the high-level idea (and current
+thinking) for a given proposal. The only comments that are expected
+will be information about scheduling (e.g., a meeting has been
+scheduled) or other such events.
+
+If we find that issues are being used for discussion, we may need to
+create a bot that either locks the issue automatically or else which
+responds (and hides) people's attempts to post comments that don't fit
+particular templates.
+
+## Reviewing proposals
+
+The lang team shall establish a proecss for regularly reviewing
+pending proposals. The expectation is that this will take the form of
+a dedicated meeting where each member comes prepared with a small
+number of proposals for which they would like to serve as the liason
+(or shepherd). There will also be some mechanism for proposals to be
+**nominated** when it seems like they need additional feedback from
+the team. The meetings will be announced on the [Inside Rust blog] and
+on [the lang-team calendar].
+
+[Inside Rust blog]: https://blog.rust-lang.org/inside-rust/
+[the lang-team calendar]: https://github.com/rust-lang/lang-team/#meeting-calendar
+
+## Shepherds
+
+When a project is selected, it is assigned one or more **shepherds**
+(discussed here) and a **lang-team liason** (discussed in next
+section).
+
+**Shepherds** are basically the primary people who are trying to move
+the proposal along. They may be on the lang team, but they don't have
+to be. In fact, being a shepherd is a great way to get started on the
+lang team.
+
+### Being a shepherd is a commitment
+
+* Shepherds are supposed to keep the lang team abreast of
+  the current status of the design and discussion. This can be done by
+  attending meetings, but it could also be done by blog posts or
+  written reports.
+* When a design concern or conflict arises, shepherds should help to
+  see it resolved. This means a few things. First and foremost, they
+  have to work to **understand and document the considerations at
+  play**, and be prepared to summarize those.
+    * (Note: they don't necessarily have to do all this work
+      themselves! I would like to see us making more use of
+      [collaborative summary documents], which allow us to share the
+      work of documenting concerns.)
+* Shepherds should also work to help resolve the conflict, possibly by
+  scheduling one-off meetings or through other means.
+* Finally, shepherds often become experts in their area. As such, to
+  the extent that they can, we would like them to help to answer
+  questions that arise about similar topics in the future (even if
+  they are not actively shepherding that area anymore).
+
+### Accepting a project if a commitment from the lang team
+
+From the [Shepherds 3.0 blog post][3.0]:
+
+[3.0]: http://smallcultfollowing.com/babysteps/blog/2019/09/11/aic-shepherds-3-0/
+
+> I want to emphasize this part of things. I think the lang team suffers
+> from the problem of doing too many things at once. Part of agreeing
+> that someone should shepherd topic X, I think, is agreeing that we
+> should be making progress on topic X.
+> 
+> This implies that the team agrees to follow along with the status
+> updates and give moderate amounts of feedback when requested. 
+> 
+> Of course, as the design progresses, it is natural that lang team
+> members will have concerns about various aspects. Just as today, we
+> operate on a consensus basis, so resolving those concerns is needed to
+> make progress. When an item has an active shepherd, though, that means
+> it is a priority, and this implies then that lang team members with
+> blocking concerns should make time to work with the shepherd and get
+> them resolved. (And, is always the case, this may mean accepting an
+> outcome that you don't personally agree with, if the rest of the team
+> is leaning the other way.)
+
+## Lang team liason
+
+The **lang-team liason** is someone from the lang team who is also
+following along with the project. They may or may not be following
+that closely, but it's their job to represent the project in lang team
+meetings (at least, if the shepherds can't attend) and to help ensure
+that the project keeps moving. 
+
+The lang team will ensure that liasons are not overburdened. In
+particular, we will try to limit the number of things that a liason
+can do at one time, so as to ensure that they have bandwidth
+available.
+
+## Repository
+
+When we create a repository for a proposal, that repository will be
+created in the rust-lang github org. It will be given a name like
+`project-xyz`, where `xyz` is related to the name of the feature (for
+example, [`project-ffi-unwind`].
+
+[`project-ffi-unwind`]: https://github.com/rust-lang/project-ffi-unwind/
+
+The precise template for these repositories is not specified in the
+RFC but is something we expect to evolve over time. However, it will
+include at least the following:
+
+* a 'charter', describing the goals of the working group;
+* RFC text, written collaboratively;
+* summaries of key decisions, indicating the pros and cons and possible options
+    * think of the write-ups that were done as part of deciding the async-await syntax
 
 # Drawbacks
 [drawbacks]: #drawbacks
 
-This 
+The RFC repo no longer serves as a place to go to see all the pending
+proposals -- instead, the internals discussion board plays that role.
 
 # Rationale and alternatives
 [rationale-and-alternatives]: #rationale-and-alternatives
 
-- Why is this design the best in the space of possible designs?
-- What other designs have been considered and what is the rationale for not choosing them?
-- What is the impact of not doing this?
+There are any number of variations possible. This section includes a
+few of the key notes.
 
 # Prior art
 [prior-art]: #prior-art
 
-Discuss prior art, both the good and the bad, in relation to this proposal.
-A few examples of what this can include are:
+## TC39
 
-- For language, library, cargo, tools, and compiler proposals: Does this feature exist in other programming languages and what experience have their community had?
-- For community proposals: Is this done by some other community and what were their experiences with it?
-- For other teams: What lessons can we learn from what other communities have done here?
-- Papers: Are there any published papers or great posts that discuss this? If you have some relevant papers to refer to, this can serve as a more detailed theoretical background.
-
-This section is intended to encourage you as an author to think about the lessons from other languages, provide readers of your RFC with a fuller picture.
-If there is no prior art, that is fine - your ideas are interesting to us whether they are brand new or if it is an adaptation from other languages.
-
-Note that while precedent set by other languages is some motivation, it does not on its own motivate an RFC.
-Please also take into consideration that rust sometimes intentionally diverges from common language features.
+XXX
 
 # Unresolved questions
 [unresolved-questions]: #unresolved-questions
 
-- What parts of the design do you expect to resolve through the RFC process before this gets merged?
-- What parts of the design do you expect to resolve through the implementation of this feature before stabilization?
-- What related issues do you consider out of scope for this RFC that could be addressed in the future independently of the solution that comes out of this RFC?
+This RFC does't have a "stabilization period" like other
+RFCs. However, the RFC does leave a number of details loosely
+specified, with the expectation that they will be adapted over time:
+
+* The precise way that the lang team will conduct regular reviews of pending proposals
+* The precise template for RFC repositories
+* The precise duties of a shepherd or liason
 
 # Future possibilities
 [future-possibilities]: #future-possibilities
 
-Think about what the natural extension and evolution of your proposal would
-be and how it would affect the language and project as a whole in a holistic
-way. Try to use this section as a tool to more fully consider all possible
-interactions with the project and language in your proposal.
-Also consider how the this all fits into the roadmap for the project
-and of the relevant sub-team.
-
-This is also a good place to "dump ideas", if they are out of scope for the
-RFC you are writing but otherwise related.
-
-If you have tried and cannot think of any future possibilities,
-you may simply state that you cannot think of anything.
-
-Note that having something written down in the future-possibilities section
-is not a reason to accept the current or a future RFC; such notes should be
-in the section on motivation or rationale in this or subsequent RFCs.
-The section merely provides additional information.
+None.
