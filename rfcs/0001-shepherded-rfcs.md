@@ -28,6 +28,19 @@ Core principles:
 * **Path to membership:** A final goal is to create a path by which
   people can gain more experience with how the lang team operates and
   perhaps ultimately be asked to join the team.
+  
+Core ideas of the proposal:
+
+* Proposals begin as issues on the lang-team repository with corresponding internals threads(s)
+* When selected, proposals become shepherded items, and they are
+  assigned shepherds and a lang team liason
+* Each proposal gets a dedicated repository which can be used to
+  collect design notes and the like and which stays active until the
+  proposal is stabilized
+  
+**Note:** If this RFC is adopted, then existing T-lang RFCs will be
+asked to migrate to the lang-team issues and (eventually) closed as
+postponed.
 
 # Motivation
 [motivation]: #motivation
@@ -192,9 +205,10 @@ available.
 ## Repository
 
 When we create a repository for a proposal, that repository will be
-created in the rust-lang github org. It will be given a name like
+created in the `rust-lang` github org. It will be given a name like
 `project-xyz`, where `xyz` is related to the name of the feature (for
-example, [`project-ffi-unwind`].
+example, [`project-ffi-unwind`]. The shepherds as well as the
+lang-team will be given write access to the repository.
 
 [`project-ffi-unwind`]: https://github.com/rust-lang/project-ffi-unwind/
 
@@ -207,6 +221,14 @@ include at least the following:
 * summaries of key decisions, indicating the pros and cons and possible options
     * think of the write-ups that were done as part of deciding the async-await syntax
 
+## Transitioning to the new system 
+
+In order to transition to the new system, the existing T-Lang RFCs on
+the rfcs repo will need to be migrated to lang-team issues. To aid in
+this process, we will send a message to each RFC, giving instructions
+and guidance on how to do that. After a certain amount of time, we
+will close the RFCs as "postponed".
+
 # Drawbacks
 [drawbacks]: #drawbacks
 
@@ -218,6 +240,29 @@ proposals -- instead, the internals discussion board plays that role.
 
 There are any number of variations possible. This section includes a
 few of the key notes.
+
+**Where should the project repos be created?** The repositories for
+each project are created in the rust-lang org. We considered creating
+them in people's personal Github accounts, but using the rust-lang org
+ensures that the full history will always be available, and will also
+aid in moderation.
+
+**Where should discussion take place for proposals?** The current RFC
+specifies that discussion takes place on internals threads. There are
+any number of other possibilities:
+
+* People could discuss in the issues themselves -- but we've seen the
+  problems that arise with long issue threads, which quickly get out
+  of date, particularly as projects evolve.
+* People could create their own repositories already in the proposal
+  state, but that would potentially create a lot of repositories. This
+  would also make moderation more difficult, particularly if those
+  repositories are not in the rust-lang org.
+
+**RFC migration.** We could automatically move all RFCs to
+issues. However, it seems better to let users opt to move
+themselves. It requires less tooling and it also offers folks a chance
+to just close older RFCs where the authors have moved on.
 
 # Prior art
 [prior-art]: #prior-art
