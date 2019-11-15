@@ -6,65 +6,89 @@
 # Summary
 [summary]: #summary
 
-This RFC proposes the lang team's RFC policy
+This RFC proposes a new scheme for managing RFC development entitled
+"shepherding". It is initially intended for use by the lang team, but
+is written in a way that it could be adopted by other teams as well.
 
-* Language features and proposals begin as issues on the lang-team repository
-    * These issues contain motivation and problem statement
-    * Along with a draft of possible solutions
-    * Often they will link to details in another repository
-    * Issues are not meant to be used for design discussion
-        * they are a channel for meta communication about scheduling or other details
-        * design discussion should occur in a linked internals thread, repository, etc
-* Periodically the lang team reviews these proposals
-    * Smaller proposals will be assigned a lang team liason/shepherd
-      and promoted immediately to an RFC
-    * Larger proposals may be promoted to a **project group** that creates RFCs
-    * If needed, we may also opt to schedule a meeting to discuss the
-      proposal in more detail, or make suggestions on how to improve
-      the proposal
-* Importantly, all T-lang RFCs should go through this process
-    * Goal: Any open T-lang RFC PR represents something the lang team feels is
-      well motivated and that we actively want to pursue **now**
-    * T-lang RFCs which haven't gone through this process will be
-      closed, with the suggestion that an issue be opened instead
-    * Note that issues which are "primarily" associated 
-* Handling the existing RFCs
-    * Existing RFCs will be converted to issues on the lang-team repository
-      and systematically reviewed are ok
+Core principles:
+
+* **Transparent:** The priorities and active work items of the team
+  should be well-documented
+* **Focused:** There will be relatively few open PRs on the RFC
+  repository at any given time, but each of them will represent a
+  topic that the lang team is actively interested in advancing
+* **Room for serendipity:** One of the goals is to make a clearer
+  advancement path for "bottom up" proposals that were not on the
+  original roadmap -- right now such proposals can often languish in
+  "RFC limbo" for far too long.
+* **Follow-through:** Another goal is that once we begin work on
+  something, we take it to its logical conclusion (e.g.,
+  stabilization) before picking up other things (or we explicitly
+  decide to stop).
+* **Path to membership:** A final goal is to create a path by which
+  people can gain more experience with how the lang team operates and
+  perhaps ultimately be asked to join the team.
 
 # Motivation
 [motivation]: #motivation
 
-One persistent problem with the RFC process is 
+In this motivation, we speak specifically of the lang-team. However,
+many of the problems described here are more general.
 
 # Guide-level explanation
 [guide-level-explanation]: #guide-level-explanation
 
-Explain the proposal as if it was already included in the language and you were teaching it to another Rust programmer. That generally means:
+*The following is sample text that would be published to describe how
+to propose a new language feature.*
 
-- Introducing new named concepts.
-- Explaining the feature largely in terms of examples.
-- Explaining how Rust programmers should *think* about the feature, and how it should impact the way they use Rust. It should explain the impact as concretely as possible.
-- If applicable, provide sample error messages, deprecation warnings, or migration guidance.
-- If applicable, describe the differences between teaching this to existing Rust programmers and new Rust programmers.
+If you would to propose a new language feature, there are a few steps
+to the process:
 
-For implementation-oriented RFCs (e.g. for compiler internals), this section should focus on how compiler contributors should think about the change, and give examples of its concrete impact. For policy RFCs, this section should provide an example-driven introduction to the policy, and explain its impact in concrete terms.
+* **Step 1: Proposal** -- in this stage, you propose an area for
+  exploration. Proposals are made by opening an issue on the lang-team
+  repository with a fixed template.
+    * These issues are not a place for discussion and will be closed
+      for comments. The template will include a link to a thread on
+      internals for discussion purposes.
+    * The lang team periodically reviews all open proposals, looking
+      for ideas that seem like a good candidate to go forward.
+    * In some cases, the team may opt to schedule a meeting to discuss
+      a proposal in more depth. In such cases, you would be encouraged
+      to attend.
+* **Step 2: Preliminary design** -- if the lang team decides to pursue
+  an idea, it will be assigned one or more **shepherds** (the folks
+  doing most of the work, not necessarily on the lang team -- possibly
+  you!) and a **lang team liason**.
+    * We'll also create a repository to begin work on the actual RFC
+      and design.
+    * For more complex designs, this repository will serve as the
+      central home for this feature, collecting not only the RFC text
+      but also design notes, meetings minutes, and whatever seems
+      relevant.
+    * Depending on the complexity of the proposal, we may also create
+      a "project group" (see RFC XXX).
+* **Step 3: Implementation** -- once the design seems sufficiently
+  baked, we can begin work on implementation. It is important to note
+  that the design may continue to involve based on feedback from
+  implementation.
+    * In order to enter this stage, it will be necessary to line up
+      some folks to work on the implementation (these can be the same
+      as the shepherds) and -- importantly -- a **compiler team
+      reviewer** (who will be reviewing the related PRs?).
+* **Step 4: Stabilization** -- once every is ready, we will create a
+  **stabilization report** documenting the final details and **move to
+  stabilize**. At this point, the feature will be usable from stable
+  Rust.
 
 # Reference-level explanation
 [reference-level-explanation]: #reference-level-explanation
 
-This is the technical portion of the RFC. Explain the design in sufficient detail that:
 
-- Its interaction with other features is clear.
-- It is reasonably clear how the feature would be implemented.
-- Corner cases are dissected by example.
-
-The section should return to the examples given in the previous section, and explain more fully how the detailed proposal makes those examples work.
 
 # Drawbacks
 [drawbacks]: #drawbacks
 
-Why should we *not* do this?
+This 
 
 # Rationale and alternatives
 [rationale-and-alternatives]: #rationale-and-alternatives
