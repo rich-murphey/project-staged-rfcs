@@ -60,8 +60,9 @@ to the process:
 * **Step 1: Proposal** -- in this stage, you propose an area for
   exploration. Proposals are made by opening an issue on the lang-team
   repository with a fixed template.
-    * These issues are not a place for discussion and will be closed
-      for comments. The template will include a link to a thread on
+    * Since the internals forum is preferred for ongoing discussion, 
+      to avoid confusion the github issues will be closed for comments.
+      The template will include a link to a thread on
       internals for discussion purposes.
     * The lang team periodically reviews all open proposals, looking
       for ideas that seem like a good candidate to go forward.
@@ -103,8 +104,8 @@ The proposal template will be fairly minimal. It will include the following info
 * key people involved in the proposal
 * a short summary of the problem
 * link(s) to internals discussion thread(s) where the proposal is being discussed in more depth
-* text indicating the role of this issue (in particular, that it is
-  not meant as a place for discussion)
+* text indicating the role of this issue (in particular, that 
+  discussion is directed to the internal forum, not github.)
   
 ## Proposal issues
 
